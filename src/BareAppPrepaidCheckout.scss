@@ -1,0 +1,201 @@
+$bareForest: #035E61;
+$bareMint: #E8F6F3;
+$bareSand: #F7F7F4;
+$bareSolar: #FFD878;
+$bareShadow: #E5E5E5;
+$bareDarkShadow: #979797;
+
+@font-face {
+  font-family: 'New Kansas';
+  src: local('New Kansas'), url(./fonts/NewKansas.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Circular Std';
+  src: local('Circular Std'), url(./fonts/CircularStd-Light.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 50px;
+  font-family:'Circular Std';
+  font-size: 14px;
+  color: $bareForest;
+}
+
+.checkoutFormCardsRow {
+  flex: auto;
+  text-align: -webkit-center;
+}
+
+.checkoutSideBarCard {
+  background-color: $bareMint;
+  border-radius: 12px;
+  margin-top: 100px;
+  height: 550px;
+}
+
+.checkoutFormCard {
+  background-color: $bareSand;
+  border-radius: 12px;
+  margin-top: 100px;
+  padding: 40px;
+}
+
+.checkoutFormCardTitle {
+  font-family: 'New Kansas';
+  font-weight: 500;
+  max-width: 700px;
+  font-size: 40px;
+  padding: 20px 0 45px 0;
+}
+
+.checkoutFormRadioWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.checkoutFormSelectCard {
+  background-color: white;
+  box-shadow: 2px 2px 8px $bareShadow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 12px;
+  height: 200px;
+  padding: 32px;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+.checkoutFormSelectCard:hover {
+  cursor: pointer;
+}
+
+.checkoutFormSelectCardTitle {
+  font-size: 24px;
+}
+
+.checkoutFormRadio {
+  position: absolute;
+  opacity: 0; // Visually no display but element stays accessible.
+}
+
+.checkoutFormRadio:checked + .checkoutFormSelectCard {
+  background-color: $bareForest;
+  color: white;
+  box-shadow: 0px;
+}
+
+.checkoutFormRadio:checked + .checkoutFormSelectCard > .checkoutFormIcon {
+  font-size: 1rem;
+}
+
+.checkoutFormIcon {
+  font-size: 0px;
+  color: $bareSolar;
+  transition-property: font-size;
+  transition-duration: 0.5s;
+}
+
+.checkoutFormFieldWrapper {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.checkoutFormFieldTitle {
+  font-family: 'New Kansas';
+  font-weight: 500;
+  font-size: 32px;
+  padding: 14px 0 45px 0;
+  text-align: left;
+}
+
+.checkoutFormFieldsRow {
+  padding-bottom: 40px;
+}
+
+.checkoutFormInlineRequired {
+  color: $bareDarkShadow;
+}
+
+.checkoutFormTextInput {
+  border: 1px solid $bareForest;
+  color: $bareForest;
+  border-radius: 12px;
+  height: 64px;
+}
+
+.checkoutFormTextInput:focus {
+  color: $bareForest;
+}
+
+.checkoutFormSubmitButton {
+  background-color: $bareForest;
+  border-radius: 75px;
+  font-size: 18px;
+  padding: 15px;
+  margin: 60px 0 60px;
+  min-width: 208px;
+  max-width: 208px;
+}
+
+.checkoutFormButtonRow {
+  float: right;
+}
+
+// Mobile view.
+@media (max-width: 767px) {
+
+  body {
+    margin: 19px;
+  }
+
+  .checkoutSideBarCard {
+    display: none;
+  }
+
+  .checkoutFormCard {
+    padding: 0 20px 0 20px;
+  }
+
+  .checkoutFormIcon {
+    display: none;
+  }
+
+  .checkoutFormRadioWrapper {
+    margin-top: 24px;
+    gap: 20px;
+  }
+
+  .checkoutFormCardTitle, .checkoutFormFieldTitle {
+    font-size: 23px;
+    padding: 24px 0 0 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  .checkoutFormSelectCardTitle {
+    font-size: 18px;
+    padding-top: 1rem;
+  }
+
+  .checkoutFormSelectCard {
+    font-size: 12px;
+    height: 146px;
+    min-width: 110px;
+    padding: 0.5rem;
+  }
+
+  .checkoutFormTextLabel {
+    margin-top: 18px;
+  }
+
+  .checkoutFormButtonRow {
+   float: none;
+    text-align: -webkit-center;
+  }
+}
